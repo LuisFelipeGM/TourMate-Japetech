@@ -2,6 +2,7 @@ package com.japetech.tourmate.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Past;
 import lombok.Data;
 
@@ -27,6 +28,7 @@ public class UsuarioModel implements Serializable {
     @OrderColumn(name = "2")
     private String nome;
 
+    @Email
     @Column(nullable = false, length = 100)
     @OrderColumn(name = "3")
     private String email;

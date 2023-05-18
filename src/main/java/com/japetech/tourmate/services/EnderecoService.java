@@ -10,8 +10,11 @@ import java.util.List;
 @Service
 public class EnderecoService extends GenericService<EnderecoModel, Long> {
 
-    EnderecoService(JpaRepository<EnderecoModel, Long> repository){
+    private final EnderecoRepository enderecoRepository;
+
+    EnderecoService(JpaRepository<EnderecoModel, Long> repository, EnderecoRepository enderecoRepository){
         super(repository);
+        this.enderecoRepository = enderecoRepository;
     }
 
     public List<EnderecoModel> findByestado(String estado){
@@ -22,7 +25,8 @@ public class EnderecoService extends GenericService<EnderecoModel, Long> {
         return ((EnderecoRepository) repository).findBycidadeContainingIgnoreCase(cidade);
     }
 
-    public List<EnderecoModel> findBysigla(String sigla){
-        return ((EnderecoRepository) repository).findBysigla(sigla);
+    public List<EnderecoModel> findBysiglaEstado(String siglaEstado){
+        return ((EnderecoRepository) repository).findBysiglaEstado(siglaEstado);
     }
+
 }

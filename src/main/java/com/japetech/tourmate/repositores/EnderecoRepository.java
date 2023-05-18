@@ -13,6 +13,6 @@ public interface EnderecoRepository extends JpaRepository<EnderecoModel, Long> {
 
     List<EnderecoModel> findBycidadeContainingIgnoreCase(String cidade);
 
-    List<EnderecoModel> findBysigla(String cidade);
+    List<EnderecoModel> findBysiglaEstado(String siglaEstado);
 
 }

@@ -1,5 +1,6 @@
 package com.japetech.tourmate.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
@@ -25,13 +26,14 @@ public class ParceirosModel implements Serializable {
 
     @Column(nullable = false, length = 14)
     @OrderColumn(name = "3")
-    private Integer cnpj;
+    private String cnpj;
 
     @Pattern(regexp = "^\\([1-9]{2}\\) (?:[2-8]|9[1-9])[0-9]{3}\\-[0-9]{4}$")
     @Column(length = 30)
     @OrderColumn(name = "4")
     private String telefone;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(
             name = "T_TRMT_PLANO_VIAJEM_PARCEIROS",

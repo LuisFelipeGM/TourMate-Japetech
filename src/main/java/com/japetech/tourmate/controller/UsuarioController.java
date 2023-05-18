@@ -58,7 +58,7 @@ public class UsuarioController {
 
 
 
-    @Operation(summary = "Recupera um usuario por ID", description = "Recupera os dados de um aluno a partir do seu ID")
+    @Operation(summary = "Recupera um usuario por ID", description = "Recupera os dados de um usuario a partir do seu ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Usuario encontrado com sucesso",
             content = {@Content(

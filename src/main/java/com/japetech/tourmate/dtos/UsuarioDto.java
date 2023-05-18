@@ -3,6 +3,7 @@ package com.japetech.tourmate.dtos;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -24,7 +25,7 @@ public class UsuarioDto {
 
     @Schema(example = "98651735847")
     @NotNull(message = "O CPF é obrigatório!")
-    private Integer cpf;
+    private String cpf;
 
     @Schema(example = "2003-09-01")
     @NotNull(message = "A Data de nascimento é obrigatório!")
@@ -32,10 +33,12 @@ public class UsuarioDto {
 
     @Schema(example = "U")
     @NotBlank(message = "O Tipo do usuario é obrigatório!")
-    private Character tipoUsuario;
+    @Size(min = 1, max = 1, message = "O Tipo do usuario deve ter um único caractere.")
+    private String tipoUsuario;
 
     @Schema(example = "M")
-    @NotBlank(message = "O genero é obrigatório!")
-    private Character sexo;
+    @NotNull(message = "O gênero é obrigatório!")
+    @Size(min = 1, max = 1, message = "O gênero deve ter um único caractere.")
+    private String sexo;
 
 }

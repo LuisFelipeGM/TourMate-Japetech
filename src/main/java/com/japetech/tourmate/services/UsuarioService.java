@@ -10,8 +10,11 @@ import java.util.List;
 @Service
 public class UsuarioService extends GenericService<UsuarioModel, Long>{
 
-    UsuarioService(JpaRepository<UsuarioModel, Long> repository){
+    private final UsuarioRepository usuarioRepository;
+
+    UsuarioService(JpaRepository<UsuarioModel, Long> repository, UsuarioRepository usuarioRepository){
         super(repository);
+        this.usuarioRepository = usuarioRepository;
     }
 
     public List<UsuarioModel> findByemail(String email){

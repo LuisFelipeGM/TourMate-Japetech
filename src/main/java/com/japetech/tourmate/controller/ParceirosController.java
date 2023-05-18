@@ -2,7 +2,6 @@ package com.japetech.tourmate.controller;
 
 import com.japetech.tourmate.dtos.ParceirosDto;
 import com.japetech.tourmate.models.ParceirosModel;
-import com.japetech.tourmate.models.UsuarioModel;
 import com.japetech.tourmate.services.ParceirosService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;

@@ -1,5 +1,6 @@
 package com.japetech.tourmate.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -29,7 +30,7 @@ public class PlanoViajemModel implements Serializable {
 
     @Column(nullable = false, length = 80)
     @OrderColumn(name = "4")
-    private String localViagjem;
+    private String localViajem;
 
     @Column(nullable = false)
     @OrderColumn(name = "5")
@@ -38,6 +39,7 @@ public class PlanoViajemModel implements Serializable {
     @OrderColumn(name = "6")
     private LocalDate dataFim;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(
             name = "T_TRMT_PLANO_VIAJEM_USUARIO",

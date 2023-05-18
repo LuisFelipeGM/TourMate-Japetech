@@ -37,9 +37,9 @@ public class UsuarioModel implements Serializable {
     @OrderColumn(name = "4")
     private String senha;
 
-    @Column(unique = true, length = 12)
+    @Column(unique = true, length = 11)
     @OrderColumn(name = "5")
-    private Integer cpf;
+    private String cpf;
 
     @Past
     @OrderColumn(name = "6")
@@ -47,11 +47,11 @@ public class UsuarioModel implements Serializable {
 
     @Column(nullable = false, length = 1)
     @OrderColumn(name = "7")
-    private Character tipoUsuario;
+    private String tipoUsuario;
 
     @Column(nullable = false, length = 1)
     @OrderColumn(name = "8")
-    private Character sexo;
+    private String sexo;
 
     @JsonProperty("idade")
     public int idade(){

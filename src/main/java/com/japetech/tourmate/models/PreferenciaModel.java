@@ -1,5 +1,6 @@
 package com.japetech.tourmate.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -20,48 +21,49 @@ public class PreferenciaModel implements Serializable {
 
     @Column(nullable = false, length = 1)
     @OrderColumn(name = "2")
-    private Character flowUsuario;
+    private String flowUsuario;
 
     @Column(length = 1)
     @OrderColumn(name = "3")
-    private Character climeFrio;
+    private String climaFrio;
 
     @Column(length = 1)
     @OrderColumn(name = "4")
-    private Character climeQuente;
+    private String climaQuente;
 
     @Column(length = 1)
     @OrderColumn(name = "5")
-    private Character viajemTurismo;
+    private String viajemTurismo;
 
     @Column(length = 1)
     @OrderColumn(name = "6")
-    private Character viajemNegocio;
+    private String viajemNegocio;
 
     @Column(length = 1)
     @OrderColumn(name = "7")
-    private Character viajemLazer;
+    private String viajemLazer;
 
     @Column(length = 1)
     @OrderColumn(name = "8")
-    private Character viajemRomantico;
+    private String viajemRomantico;
 
     @Column(length = 1)
     @OrderColumn(name = "9")
-    private Character climaChuvoso;
+    private String climaChuvoso;
 
     @Column(length = 1)
     @OrderColumn(name = "10")
-    private Character climaEnsolarado;
+    private String climaEnsolarado;
 
     @Column(length = 1)
     @OrderColumn(name = "11")
-    private Character climaNublado;
+    private String climaNublado;
 
     @Column(length = 1)
     @OrderColumn(name = "12")
-    private Character climaNeve;
+    private String climaNeve;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(
             name = "T_TRMT_PLANO_VIAJEM_PREFERENCIA",

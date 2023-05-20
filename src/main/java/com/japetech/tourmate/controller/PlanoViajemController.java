@@ -150,7 +150,7 @@ public class PlanoViajemController {
                     )})
     })
     @PutMapping("/{id}")
-    public ResponseEntity<PlanoViajemModel> put(@PathVariable Long id, @Valid @RequestBody PlanoViajemDto planoViajemDto) {
+    public ResponseEntity<Object> put(@PathVariable Long id, @Valid @RequestBody PlanoViajemDto planoViajemDto) {
         try {
             PlanoViajemModel existingPlanoViajem = planoViajemService.findById(id);
             existingPlanoViajem.setNomeFantasia(planoViajemDto.getNomeFantasia());
@@ -163,6 +163,10 @@ public class PlanoViajemController {
             return ResponseEntity.ok(updatedPlanoViajem);
         } catch (NoSuchElementException e) {
             return ResponseEntity.notFound().build();
+        } catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Erro ao atualizar o plano de viajem: " + e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar o plano de viajem: " + e.getMessage());
         }
     }
 
@@ -185,7 +189,7 @@ public class PlanoViajemController {
                     )})
     })
     @PatchMapping("/{id}")
-    public ResponseEntity<PlanoViajemModel> patch(@PathVariable Long id, @RequestBody PlanoViajemDto planoViajemDto) {
+    public ResponseEntity<Object> patch(@PathVariable Long id, @RequestBody PlanoViajemDto planoViajemDto) {
         try {
             PlanoViajemModel existingPlanoViajem = planoViajemService.findById(id);
 
@@ -209,6 +213,10 @@ public class PlanoViajemController {
             return ResponseEntity.ok(updatedPlanoViajem);
         } catch (NoSuchElementException e) {
             return ResponseEntity.notFound().build();
+        } catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Erro ao atualizar o plano de viajem: " + e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar o plano de viajem: " + e.getMessage());
         }
     }
 

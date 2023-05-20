@@ -129,4 +129,88 @@ public class ParceirosController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @Operation(summary = "Atualiza um parceiro", description = "Atualiza os dados de um parceiro existente")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Parceiro atualizado com sucesso",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ParceirosModel.class)
+                    )}),
+            @ApiResponse(responseCode = "404", description = "Parceiro não encontrado",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "No content")
+                    )}),
+            @ApiResponse(responseCode = "409", description = "Violação de restrição de dados",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "Conflict")
+                    )})
+    })
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> put(@PathVariable Long id, @Valid @RequestBody ParceirosDto parceirosDto) {
+        try {
+            ParceirosModel existingParceiro = parceirosService.findById(id);
+            existingParceiro.setNomeFantasia(parceirosDto.getNomeFantasia());
+            existingParceiro.setCnpj(parceirosDto.getCnpj());
+            existingParceiro.setTelefone(parceirosDto.getTelefone());
+
+            ParceirosModel updatedParceiro = parceirosService.save(existingParceiro);
+            return ResponseEntity.ok(updatedParceiro);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
+        } catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Erro ao atualizar parcialmente o parceiro: " + e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar parcialmente o parceiro: " + e.getMessage());
+        }
+    }
+
+
+    @Operation(summary = "Atualiza parcialmente um parceiro", description = "Atualiza parcialmente os dados de um parceiro existente")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Parceiro atualizado com sucesso",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ParceirosModel.class)
+                    )}),
+            @ApiResponse(responseCode = "404", description = "Parceiro não encontrado",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "No content")
+                    )}),
+            @ApiResponse(responseCode = "409", description = "Violação de restrição de dados",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "Conflict")
+                    )})
+    })
+    @PatchMapping("/{id}")
+    public ResponseEntity<Object> partialUpdate(@PathVariable Long id, @Valid @RequestBody ParceirosModel parceirosModel) {
+        try {
+            ParceirosModel existingParceiro = parceirosService.findById(id);
+
+            if (parceirosModel.getNomeFantasia() != null) {
+                existingParceiro.setNomeFantasia(parceirosModel.getNomeFantasia());
+            }
+            if (parceirosModel.getCnpj() != null) {
+                existingParceiro.setCnpj(parceirosModel.getCnpj());
+            }
+            if (parceirosModel.getTelefone() != null) {
+                existingParceiro.setTelefone(parceirosModel.getTelefone());
+            }
+
+            ParceirosModel updatedParceiro = parceirosService.save(existingParceiro);
+            return ResponseEntity.ok(updatedParceiro);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
+        } catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Erro ao atualizar parcialmente o parceiro: " + e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar parcialmente o parceiro: " + e.getMessage());
+        }
+    }
+
+
 }

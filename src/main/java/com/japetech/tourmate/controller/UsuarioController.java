@@ -166,5 +166,101 @@ public class UsuarioController {
         }
     }
 
+    @Operation(summary = "Atualiza um usuario", description = "Atualiza um usuario existente")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Usuario atualizado com sucesso",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = UsuarioModel.class)
+                    )}),
+            @ApiResponse(responseCode = "404", description = "Usuario não encontrado",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "No content")
+                    )}),
+            @ApiResponse(responseCode = "409", description = "Violação de restrição de dados",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "Conflict")
+                    )})
+    })
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> update(@PathVariable Long id, @Valid @RequestBody UsuarioDto usuarioDto) {
+        try {
+            UsuarioModel existingUsuario = usuarioService.findById(id);
+            existingUsuario.setNome(usuarioDto.getNome());
+            existingUsuario.setEmail(usuarioDto.getEmail());
+            existingUsuario.setSenha(usuarioDto.getSenha());
+            existingUsuario.setCpf(usuarioDto.getCpf());
+            existingUsuario.setDataNascimento(usuarioDto.getDataNascimento());
+            existingUsuario.setTipoUsuario(usuarioDto.getTipoUsuario());
+            existingUsuario.setSexo(usuarioDto.getSexo());
+
+            UsuarioModel updatedUsuario = usuarioService.save(existingUsuario);
+            return ResponseEntity.ok(updatedUsuario);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
+        } catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Erro ao atualizar o usuário: " + e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar o usuário: " + e.getMessage());
+        }
+    }
+
+    @Operation(summary = "Atualiza parcialmente um usuario", description = "Atualiza parcialmente um usuario existente")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Usuario atualizado com sucesso",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = UsuarioModel.class)
+                    )}),
+            @ApiResponse(responseCode = "404", description = "Usuario não encontrado",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "No content")
+                    )}),
+            @ApiResponse(responseCode = "409", description = "Violação de restrição de dados",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "Conflict")
+                    )})
+    })
+    @PatchMapping("/{id}")
+    public ResponseEntity<Object> partialUpdate(@PathVariable Long id, @Valid @RequestBody UsuarioDto usuarioDto) {
+        try {
+            UsuarioModel existingUsuario = usuarioService.findById(id);
+            if (usuarioDto.getNome() != null) {
+                existingUsuario.setNome(usuarioDto.getNome());
+            }
+            if (usuarioDto.getEmail() != null) {
+                existingUsuario.setEmail(usuarioDto.getEmail());
+            }
+            if (usuarioDto.getSenha() != null) {
+                existingUsuario.setSenha(usuarioDto.getSenha());
+            }
+            if (usuarioDto.getCpf() != null) {
+                existingUsuario.setCpf(usuarioDto.getCpf());
+            }
+            if (usuarioDto.getDataNascimento() != null) {
+                existingUsuario.setDataNascimento(usuarioDto.getDataNascimento());
+            }
+            if (usuarioDto.getTipoUsuario() != null) {
+                existingUsuario.setTipoUsuario(usuarioDto.getTipoUsuario());
+            }
+            if (usuarioDto.getSexo() != null) {
+                existingUsuario.setSexo(usuarioDto.getSexo());
+            }
+
+            UsuarioModel updatedUsuario = usuarioService.save(existingUsuario);
+            return ResponseEntity.ok(updatedUsuario);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
+        } catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Erro ao atualizar parcialmente o usuário: " + e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar parcialmente o usuário: " + e.getMessage());
+        }
+    }
+
 
 }

@@ -201,7 +201,7 @@ public class PreferenciaController {
                     )})
     })
     @PatchMapping("/{id}")
-    public ResponseEntity<PreferenciaModel> patch(@PathVariable Long id, @RequestBody PreferenciaDto preferenciaDto) {
+    public ResponseEntity<Object> patch(@PathVariable Long id, @RequestBody PreferenciaDto preferenciaDto) {
         try {
             PreferenciaModel existingPreferencia = preferenciaService.findById(id);
 
@@ -243,6 +243,10 @@ public class PreferenciaController {
             return ResponseEntity.ok(updatedPreferencia);
         } catch (NoSuchElementException e) {
             return ResponseEntity.notFound().build();
+        } catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Erro ao atualizar a preferencia: " + e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar a preferencia: " + e.getMessage());
         }
     }
 }

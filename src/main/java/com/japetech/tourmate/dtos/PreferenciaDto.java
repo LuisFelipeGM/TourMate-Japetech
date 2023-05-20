@@ -8,14 +8,12 @@ import lombok.Data;
 public class PreferenciaDto {
 
     @Schema(example = "T")
-    @NotBlank(message = "O Flow do Usuario é obrigatório!")
     private String flowUsuario;
 
     @Schema(example = "F")
     private String climaFrio;
 
     @Schema(example = "T")
-    @NotBlank(message = "O Clima Quente é obrigatório!")
     private String climaQuente;
 
     @Schema(example = "T")

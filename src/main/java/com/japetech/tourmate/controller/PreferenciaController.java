@@ -136,4 +136,113 @@ public class PreferenciaController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @Operation(summary = "Atualiza uma preferencia", description = "Atualiza uma preferencia existente")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Preferencia atualizada com sucesso",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = PreferenciaModel.class)
+                    )}),
+            @ApiResponse(responseCode = "404", description = "Preferencia não encontrada",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "No content")
+                    )}),
+            @ApiResponse(responseCode = "409", description = "Violação de restrição de dados",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "Conflict")
+                    )})
+    })
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> update(@PathVariable Long id, @Valid @RequestBody PreferenciaDto preferenciaDto) {
+        try {
+            PreferenciaModel existingPreferencia = preferenciaService.findById(id);
+            existingPreferencia.setFlowUsuario(preferenciaDto.getFlowUsuario());
+            existingPreferencia.setClimaChuvoso(preferenciaDto.getClimaChuvoso());
+            existingPreferencia.setClimaEnsolarado(preferenciaDto.getClimaEnsolarado());
+            existingPreferencia.setClimaNublado(preferenciaDto.getClimaNublado());
+            existingPreferencia.setClimaNeve(preferenciaDto.getClimaNeve());
+            existingPreferencia.setClimaFrio(preferenciaDto.getClimaFrio());
+            existingPreferencia.setClimaQuente(preferenciaDto.getClimaQuente());
+            existingPreferencia.setViajemLazer(preferenciaDto.getViajemLazer());
+            existingPreferencia.setViajemNegocio(preferenciaDto.getViajemNegocio());
+            existingPreferencia.setViajemTurismo(preferenciaDto.getViajemTurismo());
+            existingPreferencia.setViajemRomantico(preferenciaDto.getViajemRomantico());
+
+            PreferenciaModel updatedPreferencia = preferenciaService.save(existingPreferencia);
+            return ResponseEntity.ok(updatedPreferencia);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
+        } catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Erro ao atualizar a preferencia: " + e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar a preferencia: " + e.getMessage());
+        }
+    }
+
+    @Operation(summary = "Atualiza parcialmente uma preferencia", description = "Atualiza parcialmente os dados de uma preferencia")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Preferencia atualizada com sucesso",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = PreferenciaModel.class)
+                    )}),
+            @ApiResponse(responseCode = "404", description = "Preferencia não encontrada",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "No content")
+                    )}),
+            @ApiResponse(responseCode = "409", description = "Violação de restrição de dados",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "Conflict")
+                    )})
+    })
+    @PatchMapping("/{id}")
+    public ResponseEntity<PreferenciaModel> patch(@PathVariable Long id, @RequestBody PreferenciaDto preferenciaDto) {
+        try {
+            PreferenciaModel existingPreferencia = preferenciaService.findById(id);
+
+            if (preferenciaDto.getFlowUsuario() != null) {
+                existingPreferencia.setFlowUsuario(preferenciaDto.getFlowUsuario());
+            }
+            if (preferenciaDto.getClimaFrio() != null) {
+                existingPreferencia.setClimaFrio(preferenciaDto.getClimaFrio());
+            }
+            if (preferenciaDto.getClimaQuente() != null) {
+                existingPreferencia.setClimaQuente(preferenciaDto.getClimaQuente());
+            }
+            if (preferenciaDto.getViajemTurismo() != null) {
+                existingPreferencia.setViajemTurismo(preferenciaDto.getViajemTurismo());
+            }
+            if (preferenciaDto.getViajemNegocio() != null) {
+                existingPreferencia.setViajemNegocio(preferenciaDto.getViajemNegocio());
+            }
+            if (preferenciaDto.getViajemLazer() != null) {
+                existingPreferencia.setViajemLazer(preferenciaDto.getViajemLazer());
+            }
+            if (preferenciaDto.getViajemRomantico() != null) {
+                existingPreferencia.setViajemRomantico(preferenciaDto.getViajemRomantico());
+            }
+            if (preferenciaDto.getClimaChuvoso() != null) {
+                existingPreferencia.setClimaChuvoso(preferenciaDto.getClimaChuvoso());
+            }
+            if (preferenciaDto.getClimaEnsolarado() != null) {
+                existingPreferencia.setClimaEnsolarado(preferenciaDto.getClimaEnsolarado());
+            }
+            if (preferenciaDto.getClimaNublado() != null) {
+                existingPreferencia.setClimaNublado(preferenciaDto.getClimaNublado());
+            }
+            if (preferenciaDto.getClimaNeve() != null) {
+                existingPreferencia.setClimaNeve(preferenciaDto.getClimaNeve());
+            }
+
+            PreferenciaModel updatedPreferencia = preferenciaService.save(existingPreferencia);
+            return ResponseEntity.ok(updatedPreferencia);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

@@ -130,4 +130,87 @@ public class PlanoViajemController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @Operation(summary = "Atualiza um plano de viajem pelo ID", description = "Atualiza um plano de viajem a partir do seu ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Plano de viajem atualizada com sucesso",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = PlanoViajemModel.class)
+                    )}),
+            @ApiResponse(responseCode = "404", description = "Plano de viajem não encontrado",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "No content")
+                    )}),
+            @ApiResponse(responseCode = "409", description = "Violação de restrição de dados",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "Conflict")
+                    )})
+    })
+    @PutMapping("/{id}")
+    public ResponseEntity<PlanoViajemModel> put(@PathVariable Long id, @Valid @RequestBody PlanoViajemDto planoViajemDto) {
+        try {
+            PlanoViajemModel existingPlanoViajem = planoViajemService.findById(id);
+            existingPlanoViajem.setNomeFantasia(planoViajemDto.getNomeFantasia());
+            existingPlanoViajem.setPlanoViajem(planoViajemDto.getPlanoViajem());
+            existingPlanoViajem.setLocalViajem(planoViajemDto.getLocalViajem());
+            existingPlanoViajem.setDataInicio(planoViajemDto.getDataInicio());
+            existingPlanoViajem.setDataFim(planoViajemDto.getDataFim());
+
+            PlanoViajemModel updatedPlanoViajem = planoViajemService.save(existingPlanoViajem);
+            return ResponseEntity.ok(updatedPlanoViajem);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @Operation(summary = "Atualiza parcialmente um plano de viajem pelo ID", description = "Atualiza parcialmente os dados de um plano de viajem a partir do seu ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Plano de viajem atualizada com sucesso",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = PlanoViajemModel.class)
+                    )}),
+            @ApiResponse(responseCode = "404", description = "Plano de viajem não encontrado",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "No content")
+                    )}),
+            @ApiResponse(responseCode = "409", description = "Violação de restrição de dados",
+                    content = {@Content(
+                            mediaType = "application/json",
+                            schema = @Schema(example = "Conflict")
+                    )})
+    })
+    @PatchMapping("/{id}")
+    public ResponseEntity<PlanoViajemModel> patch(@PathVariable Long id, @RequestBody PlanoViajemDto planoViajemDto) {
+        try {
+            PlanoViajemModel existingPlanoViajem = planoViajemService.findById(id);
+
+            if (planoViajemDto.getNomeFantasia() != null) {
+                existingPlanoViajem.setNomeFantasia(planoViajemDto.getNomeFantasia());
+            }
+            if (planoViajemDto.getPlanoViajem() != null) {
+                existingPlanoViajem.setPlanoViajem(planoViajemDto.getPlanoViajem());
+            }
+            if (planoViajemDto.getLocalViajem() != null) {
+                existingPlanoViajem.setLocalViajem(planoViajemDto.getLocalViajem());
+            }
+            if (planoViajemDto.getDataInicio() != null) {
+                existingPlanoViajem.setDataInicio(planoViajemDto.getDataInicio());
+            }
+            if (planoViajemDto.getDataFim() != null) {
+                existingPlanoViajem.setDataFim(planoViajemDto.getDataFim());
+            }
+
+            PlanoViajemModel updatedPlanoViajem = planoViajemService.save(existingPlanoViajem);
+            return ResponseEntity.ok(updatedPlanoViajem);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
 }

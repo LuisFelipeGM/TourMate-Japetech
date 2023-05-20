@@ -14,15 +14,12 @@ public class PlanoViajemDto {
     private String nomeFantasia;
 
     @Schema(example = "Planejamento de viajem para a praia de Fernando de Noronha")
-    @NotBlank(message = "O Plano de Viajem é obrigatório!")
     private String planoViajem;
 
     @Schema(example = "Maranhão - Fernando de Noronha")
-    @NotBlank(message = "O Local de viajem é obrigatório!")
     private String localViajem;
 
     @Schema(example = "2023-09-15")
-    @NotNull(message = "A data de inicio é obrigatório!")
     private LocalDate dataInicio;
 
     @Schema(example = "2023-09-25")

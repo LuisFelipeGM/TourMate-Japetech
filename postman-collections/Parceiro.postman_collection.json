@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "b580bdd8-15fe-40bd-9e39-a64da140c342",
+		"name": "Parceiro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23735733"
+	},
+	"item": [
+		{
+			"name": "Parceiros (ALL)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/parceiros/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parceiros",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parceiros (GetById)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/parceiros/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parceiros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parceiros POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeFantasia\": \"Hotel 5\",\r\n    \"cnpj\": \"1234567891236\",\r\n    \"telefone\": \"(11) 97460-9481\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/parceiros/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parceiros",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parceiros Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/parceiros/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parceiros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parceiros PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeFantasia\": \"Chei de Sal\",\r\n    \"cnpj\": \"1234567891236\",\r\n    \"telefone\": \"(11) 97460-9481\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/parceiros/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parceiros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parceiros PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"telefone\": \"(11) 94002-8922\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/parceiros/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parceiros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

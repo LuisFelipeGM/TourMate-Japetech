@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "8b294e80-3412-42df-9522-3b57120825c5",
+		"name": "Preferencias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23735733"
+	},
+	"item": [
+		{
+			"name": "Preferencias (ALL)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/preferencias/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"preferencias",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prerferencias (GetById)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/preferencias/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"preferencias",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Preferencias POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"flowUsuario\": \"T\",\r\n    \"climaFrio\": \"T\",\r\n    \"climaQuente\": \"T\",\r\n    \"viajemTurismo\": \"T\",\r\n    \"viajemNegocio\": \"T\",\r\n    \"viajemLazer\": \"T\",\r\n    \"viajemRomantico\": \"T\",\r\n    \"climaChuvoso\": \"T\",\r\n    \"climaEnsolarado\": \"T\",\r\n    \"climaNublado\": \"T\",\r\n    \"climaNeve\": \"T\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/preferencias/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"preferencias",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prefererncias Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/preferencias/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"preferencias",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Preferencias PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"flowUsuario\": \"T\",\r\n    \"climaFrio\": \"F\",\r\n    \"climaQuente\": \"T\",\r\n    \"viajemTurismo\": \"F\",\r\n    \"viajemNegocio\": \"T\",\r\n    \"viajemLazer\": \"F\",\r\n    \"viajemRomantico\": \"T\",\r\n    \"climaChuvoso\": \"T\",\r\n    \"climaEnsolarado\": \"F\",\r\n    \"climaNublado\": \"T\",\r\n    \"climaNeve\": \"F\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/preferencias/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"preferencias",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Preferencias PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"flowUsuario\": \"F\",\r\n    \"climaFrio\": \"T\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/preferencias/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"preferencias",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

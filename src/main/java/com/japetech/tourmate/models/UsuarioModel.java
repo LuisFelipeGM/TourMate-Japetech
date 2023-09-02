@@ -18,7 +18,7 @@ public class UsuarioModel {
     private Long id;
 
     @Column(nullable = false, length = 80)
-    private String nomeCompleto;
+    private String nome;
 
     @Column(nullable = false, length = 100)
     private String email;
@@ -27,7 +27,7 @@ public class UsuarioModel {
     private String senha;
 
     @Column(nullable = false, unique = true, length = 12)
-    private int cpf;
+    private String cpf;
 
     @Column(nullable = false)
     private LocalDate dataNascimento;

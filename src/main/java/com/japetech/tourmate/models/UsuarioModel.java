@@ -38,6 +38,9 @@ public class UsuarioModel {
     @Column(nullable = false, length = 1)
     private String plus;
 
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private EnderecoModel endereco;
+
     @JsonProperty("idade")
     public int idade(){
         if (dataNascimento != null){

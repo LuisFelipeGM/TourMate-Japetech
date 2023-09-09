@@ -14,7 +14,7 @@ import java.time.Period;
 public class UsuarioModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, length = 80)
@@ -40,6 +40,9 @@ public class UsuarioModel {
 
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private EnderecoModel endereco;
+
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private PreferenciaModel preferencia;
 
     @JsonProperty("idade")
     public int idade(){

@@ -66,4 +66,4 @@ mvn azure-webapp:deploy
 Após o deploy, acesse o link gerado pelo Azure WebApp para acessar o projeto (o link estará disponível nas informações do Deploy no CMD).
 
 ## Aviso:
-Altere as credenciais do Banco de Dados no arquivo [application.properties](./target/classes/application.properties)
+Altere as credenciais do Banco de Dados no arquivo [application.properties](./src/main/resources/application.properties)

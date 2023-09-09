@@ -21,7 +21,7 @@
 | Heitor Borba Marini         | 92976   | 2TDSS      |
 | Luís Felipe Garcia Menezes  | 94051   | 2TDST      |
 | Mateus da Costa Leme        | 93480   | 2TDSPG     |
-| Pedro Henrique Chueiri      | 93939   | 2TDSS      |
+| Pedro Henrique Chueiri      | 93939   | 2TDSPG     |
 
 ## Solução:
 O TourMate é um aplicativo para gerenciamento de viagens, que utiliza o Chat GPT para auxiliar o usuário na seleção da viagem ideal, gerando sugestões de viagem personalizadas com base no perfil. Além disso, o aplicativo dará sugestões de rotas para descobrir passeios turísticos, meios de transporte, restaurantes e a proveitar ao máximo que o que o destino tem a oferecer.

@@ -5,7 +5,7 @@ import com.japetech.tourmate.models.UsuarioModel;
 import com.japetech.tourmate.repositories.UsuarioRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.context.annotation.Bean;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -17,10 +17,12 @@ import java.util.Optional;
 public class UsuarioService extends EntityService<UsuarioModel> {
 
     private final UsuarioRepository usuarioRepository;
+    private final PreferenciaService preferenciaService;
 
-    UsuarioService(JpaRepository<UsuarioModel, Long> repository, UsuarioRepository usuarioRepository) {
+    UsuarioService(JpaRepository<UsuarioModel, Long> repository, UsuarioRepository usuarioRepository, PreferenciaService preferenciaService) {
         super(repository);
         this.usuarioRepository = usuarioRepository;
+        this.preferenciaService = preferenciaService;
     }
 
     public UsuarioModel adicionaUsuario(UsuarioDto usuarioDto){
@@ -30,7 +32,14 @@ public class UsuarioService extends EntityService<UsuarioModel> {
 
             log.info("Cadastrando novo Usuario");
 
-            return repository.save(usuario);
+            UsuarioModel usuarioCriado = repository.save(usuario);
+
+            usuarioCriado.setPreferencia(preferenciaService.adicionaPreferenciaPadrao(usuarioCriado));
+
+            return usuarioCriado;
+        } catch (DataIntegrityViolationException e) {
+            log.error("Erro ao salvar o novo usuário: Restrição exclusiva violada.");
+            throw new RuntimeException("Erro ao salvar o novo usuário: Este CPF já está cadastrado no sistema.");
         } catch (Exception e) {
             log.error("Erro ao copiar as propriedades do DTO para o modelo de Usuario: " + e.getMessage());
             throw new RuntimeException("Erro ao salvar o novo usuario.");

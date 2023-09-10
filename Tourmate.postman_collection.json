@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "6cb8d258-788e-40e5-bf34-3aaa24ae8262",
+		"name": "Tourmate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23735704"
+	},
+	"item": [
+		{
+			"name": "POSTs",
+			"item": [
+				{
+					"name": "Usuario2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Diogo Kahn\",\r\n    \"email\": \"dio.khn@hotmail.com\",\r\n    \"senha\": \"diobrando999@\",\r\n    \"cpf\": \"44489765266\",\r\n    \"dataNascimento\": \"2003-10-03\",\r\n    \"sexo\": \"M\",\r\n    \"plus\": \"S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://challenge-tourmate-devops.azurewebsites.net/usuarios/",
+							"protocol": "https",
+							"host": [
+								"challenge-tourmate-devops",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Luís Felipe\",\r\n    \"email\": \"luis.felipe@gmail.com\",\r\n    \"senha\": \"Luis123456@\",\r\n    \"cpf\": \"12345678901\",\r\n    \"dataNascimento\": \"2003-09-01\",\r\n    \"sexo\": \"M\",\r\n    \"plus\": \"N\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://challenge-tourmate-devops.azurewebsites.net/usuarios/",
+							"protocol": "https",
+							"host": [
+								"challenge-tourmate-devops",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endereco",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cep\": \"06681789\",\r\n    \"logradouro\": \"Rua Karl Czernick\",\r\n    \"numero\": 1558,\r\n    \"complementoNumero\": null,\r\n    \"pontoReferencia\": null,\r\n    \"bairro\": \"Santo Amaro\",\r\n    \"cidade\": \"São Paulo\",\r\n    \"estado\": \"São Paulo\",\r\n    \"siglaEstado\": \"SP\",\r\n    \"idUsuario\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://challenge-tourmate-devops.azurewebsites.net/enderecos/",
+							"protocol": "https",
+							"host": [
+								"challenge-tourmate-devops",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"enderecos",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GETs",
+			"item": [
+				{
+					"name": "Usuarios (All)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://challenge-tourmate-devops.azurewebsites.net/usuarios/",
+							"protocol": "https",
+							"host": [
+								"challenge-tourmate-devops",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario (id)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://challenge-tourmate-devops.azurewebsites.net/usuarios/2",
+							"protocol": "https",
+							"host": [
+								"challenge-tourmate-devops",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"usuarios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UPDATEs",
+			"item": [
+				{
+					"name": "Preferencia",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"climaFrio\": \"S\",\r\n    \"climaQuente\": \"N\",\r\n    \"viagemTurismo\": \"N\",\r\n    \"viagemNegocio\": \"N\",\r\n    \"viagemLazer\": \"S\",\r\n    \"viagemRomantico\": \"S\",\r\n    \"climaChuvoso\": \"S\",\r\n    \"climaEnsolarado\": \"N\",\r\n    \"climaNublado\": \"S\",\r\n    \"climaNeve\": \"S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://challenge-tourmate-devops.azurewebsites.net/preferencias/2",
+							"protocol": "https",
+							"host": [
+								"challenge-tourmate-devops",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"preferencias",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETEs",
+			"item": [
+				{
+					"name": "Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {}
+						},
+						"url": {
+							"raw": "https://challenge-tourmate-devops.azurewebsites.net/usuarios/1",
+							"protocol": "https",
+							"host": [
+								"challenge-tourmate-devops",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

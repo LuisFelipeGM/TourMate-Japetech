@@ -48,7 +48,7 @@ Para rodar o projeto é necessário ter uma conta na Azure Portal, pois utilizar
 Todo o processo será feito via terminal CMD, porém é possível fazer o mesmo processo via Azure Portal.<br><br>
 ### **Importante ressaltar que para fazer o deploy via CMD é necessário ter o [Azure CLI](https://aka.ms/installazurecliwindows) e o [Apache Maven](https://maven.apache.org/download.cgi) instalados em sua máquina.**<br>
 
-#### Clonanado:
+#### Clonanando:
 ```bash
 git clone https://github.com/LuisFelipeGM/TourMate-Japetech.git
 ```
@@ -56,14 +56,16 @@ git clone https://github.com/LuisFelipeGM/TourMate-Japetech.git
 ```bash
 az login
 ```
-#### Deploy:
+#### Build Deploy:
 ```bash
 mvn clean install
+```
+```bash
 mvn azure-webapp:deploy
 ```
-
 #### Acessando:
 Após o deploy, acesse o link gerado pelo Azure WebApp para acessar o projeto (o link estará disponível nas informações do Deploy no CMD).
-
+#### Testes:
+Os testes podem ser feitos via postman, importando o arquivo [TourMate.postman_collection.json](./TourMate.postman_collection.json) para o postman.
 ## Aviso:
 Altere as credenciais do Banco de Dados no arquivo [application.properties](./src/main/resources/application.properties)

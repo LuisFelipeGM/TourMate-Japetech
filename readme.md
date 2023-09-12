@@ -11,10 +11,15 @@
     * [Fazendo o Deploy](#BuildDeploy)
     * [Acessando o projeto](#Acessando)
     * [Testes](#Testes)
+
 </details>
 
 * [AVISO IMPORTANTE](#Aviso)
-* [Vídeos](#Videos)
+
+* <details><summary><a href="#Videos">Videos</a></summary>
+  * [DevOps](#DevOps)
+  * [Digital Business Enablement](#DBE)
+</details>
 
 ## Integrantes:
 | Nome                        | RM      | Turma      |
@@ -68,11 +73,21 @@ mvn azure-webapp:deploy
 #### Acessando:
 Após o deploy, acesse o link gerado pelo Azure WebApp para acessar o projeto (o link estará disponível nas informações do Deploy no CMD).
 #### Testes:
-Os testes podem ser feitos via postman, importando o arquivo [TourMate Collection .json](./collections/TourMate.postman_collection.json) para o postman.
+
+Os testes podem ser feitos via postman, importando o arquivo [TourMate Collection .json](./collections/tm_collection.json) para o postman.
+
 ## Aviso:
 Altere as credenciais do Banco de Dados no arquivo [application.properties](./src/main/resources/application.properties)
 
 # Videos:
-<a href="https://www.youtube.com/watch?v=6ieReb4PFlk&ab_channel=DiogoGiarrantiKahn">
-  <img src="./images/devops.png" alt="DevOps" width="550" height="400">
+
+## DevOps:
+<a href="https://www.youtube.com/watch?v=6ieReb4PFlk">
+  <img src="./images/devops.png" alt="Video DevOps" width="500" height="400">
 </a>
+
+## DBE:
+<a href="https://www.youtube.com/watch?v=-P8LOsY4tVs">
+  <img src="./images/dbe.png" alt="Video DBE" width="500" height="300">
+</a>
+

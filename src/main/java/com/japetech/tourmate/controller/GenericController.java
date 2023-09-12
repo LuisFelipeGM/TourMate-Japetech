@@ -28,12 +28,6 @@ public class GenericController {
                 .collect(Collectors.toList());
     }
 
-    <D, M> M copyProperties(D dto, Class<M> modelClass) {
-        M model = BeanUtils.instantiateClass(modelClass);
-        BeanUtils.copyProperties(dto, model);
-        return model;
-    }
-
     ResponseEntity<Object> handleErrors(@NotNull Exception e) {
         ErroDto erroDTO = new ErroDto("Ocorreu um erro: ", e.getMessage());
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(erroDTO);

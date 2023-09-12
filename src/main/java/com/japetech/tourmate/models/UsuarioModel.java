@@ -56,6 +56,6 @@ public class UsuarioModel {
     private PreferenciaModel preferencia;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
-    private List<ViagemModel> viagemModel = new ArrayList<>();
+    private List<ViagemModel> viagem = new ArrayList<>();
 
 }

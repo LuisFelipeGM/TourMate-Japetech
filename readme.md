@@ -6,12 +6,13 @@
 * [Pricipais funcionalidades](#Funcionalidades)
 * <details><summary><a href="#Nuvem">Como rodar o projeto (Nuvem)</a></summary>
 
-    * [Clonanado respositório](#Clonanado)
+    * [Clonanado respositório](#Clonando)
     * [Fazendo o login na Azure](#Azure)
     * [Fazendo o Deploy](#BuildDeploy)
     * [Acessando o projeto](#Acessando)
     * [Testes](#Testes)
-  </details>
+
+</details>
 
 * [AVISO IMPORTANTE](#Aviso)
 
@@ -19,6 +20,7 @@
   * [DevOps](#DevOps)
   * [Digital Business Enablement](#DBE)
 </details>
+
 ## Integrantes:
 | Nome                        | RM      | Turma      |
 |-----------------------------|---------|------------|
@@ -53,7 +55,7 @@ Para rodar o projeto é necessário ter uma conta na Azure Portal, pois utilizar
 Todo o processo será feito via terminal CMD, porém é possível fazer o mesmo processo via Azure Portal.<br><br>
 ### **Importante ressaltar que para fazer o deploy via CMD é necessário ter o [Azure CLI](https://aka.ms/installazurecliwindows) e o [Apache Maven](https://maven.apache.org/download.cgi) instalados em sua máquina.**<br>
 
-#### Clonanando:
+#### Clonando:
 ```bash
 git clone https://github.com/LuisFelipeGM/TourMate-Japetech.git
 ```
@@ -71,11 +73,14 @@ mvn azure-webapp:deploy
 #### Acessando:
 Após o deploy, acesse o link gerado pelo Azure WebApp para acessar o projeto (o link estará disponível nas informações do Deploy no CMD).
 #### Testes:
+
 Os testes podem ser feitos via postman, importando o arquivo [TourMate Collection .json](./collections/tm_collection.json) para o postman.
+
 ## Aviso:
 Altere as credenciais do Banco de Dados no arquivo [application.properties](./src/main/resources/application.properties)
 
 # Videos:
+
 ## DevOps:
 <a href="https://www.youtube.com/watch?v=6ieReb4PFlk">
   <img src="./images/devops.png" alt="Video DevOps" width="500" height="400">
@@ -85,3 +90,4 @@ Altere as credenciais do Banco de Dados no arquivo [application.properties](./sr
 <a href="https://www.youtube.com/watch?v=-P8LOsY4tVs">
   <img src="./images/dbe.png" alt="Video DBE" width="500" height="300">
 </a>
+

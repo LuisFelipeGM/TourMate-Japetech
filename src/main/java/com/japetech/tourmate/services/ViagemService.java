@@ -62,7 +62,7 @@ public class ViagemService extends EntityService<ViagemModel> {
 
     public String chatGPT() {
         String url = "https://api.openai.com/v1/chat/completions";
-        String apiKey = "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";
+        String apiKey = "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";
         String model = "gpt-3.5-turbo";
         String syst_mess = "You are a TRAVEL GUIDE ASSISTANT. you respond ONLY in a JSON object. the json will look like this:{city : [travel summary(one to two lines), value of the travel(BRAZILIAN CURRENCY), [first day, second day, third day...]]}. the key will be cities close to the city passed by the user. the first item of the list will be a quick travel summary, the second will be the estimate value of the travel (only one estimate number), consider every kind of costs, including travel, stay and food. the third will be a list of a thing to do in each day.";
 

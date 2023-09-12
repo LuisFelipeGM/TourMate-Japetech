@@ -7,6 +7,8 @@ import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -38,12 +40,6 @@ public class UsuarioModel {
     @Column(nullable = false, length = 1)
     private String plus;
 
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
-    private EnderecoModel endereco;
-
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
-    private PreferenciaModel preferencia;
-
     @JsonProperty("idade")
     public int idade(){
         if (dataNascimento != null){
@@ -52,5 +48,14 @@ public class UsuarioModel {
             return 0;
         }
     }
+
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private EnderecoModel endereco;
+
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private PreferenciaModel preferencia;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<ViagemModel> viagemModel = new ArrayList<>();
 
 }

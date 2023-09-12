@@ -69,3 +69,7 @@ Após o deploy, acesse o link gerado pelo Azure WebApp para acessar o projeto (o
 Os testes podem ser feitos via postman, importando o arquivo [TourMate.postman_collection.json](./TourMate.postman_collection.json) para o postman.
 ## Aviso:
 Altere as credenciais do Banco de Dados no arquivo [application.properties](./src/main/resources/application.properties)
+
+# Videos:
+
+[Video DevOps](https://www.youtube.com/watch?v=6ieReb4PFlk&ab_channel=DiogoGiarrantiKahn)

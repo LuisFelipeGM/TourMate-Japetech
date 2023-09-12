@@ -17,8 +17,10 @@
 * [AVISO IMPORTANTE](#Aviso)
 
 * <details><summary><a href="#Videos">Videos</a></summary>
+   
   * [DevOps](#DevOps)
   * [Digital Business Enablement](#DBE)
+  
 </details>
 
 ## Integrantes:

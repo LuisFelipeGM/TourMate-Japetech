@@ -71,5 +71,4 @@ Os testes podem ser feitos via postman, importando o arquivo [TourMate.postman_c
 Altere as credenciais do Banco de Dados no arquivo [application.properties](./src/main/resources/application.properties)
 
 # Videos:
-
 [Video DevOps](https://www.youtube.com/watch?v=6ieReb4PFlk&ab_channel=DiogoGiarrantiKahn)

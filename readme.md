@@ -6,13 +6,15 @@
 * [Pricipais funcionalidades](#Funcionalidades)
 * <details><summary><a href="#Nuvem">Como rodar o projeto (Nuvem)</a></summary>
 
-    * [Clonanado respositório](#Clonanado)
+    * [Clonanado respositório](#Clonando)
     * [Fazendo o login na Azure](#Azure)
-    * [Fazendo o Deploy](#Deploy)
+    * [Fazendo o Deploy](#BuildDeploy)
     * [Acessando o projeto](#Acessando)
+    * [Testes](#Testes)
 </details>
 
 * [AVISO IMPORTANTE](#Aviso)
+* [Vídeos](#Videos)
 
 ## Integrantes:
 | Nome                        | RM      | Turma      |
@@ -48,7 +50,7 @@ Para rodar o projeto é necessário ter uma conta na Azure Portal, pois utilizar
 Todo o processo será feito via terminal CMD, porém é possível fazer o mesmo processo via Azure Portal.<br><br>
 ### **Importante ressaltar que para fazer o deploy via CMD é necessário ter o [Azure CLI](https://aka.ms/installazurecliwindows) e o [Apache Maven](https://maven.apache.org/download.cgi) instalados em sua máquina.**<br>
 
-#### Clonanando:
+#### Clonando:
 ```bash
 git clone https://github.com/LuisFelipeGM/TourMate-Japetech.git
 ```
@@ -56,7 +58,7 @@ git clone https://github.com/LuisFelipeGM/TourMate-Japetech.git
 ```bash
 az login
 ```
-#### Build Deploy:
+#### BuildDeploy:
 ```bash
 mvn clean install
 ```
@@ -66,10 +68,11 @@ mvn azure-webapp:deploy
 #### Acessando:
 Após o deploy, acesse o link gerado pelo Azure WebApp para acessar o projeto (o link estará disponível nas informações do Deploy no CMD).
 #### Testes:
-Os testes podem ser feitos via postman, importando o arquivo [TourMate.postman_collection.json](./TourMate.postman_collection.json) para o postman.
+Os testes podem ser feitos via postman, importando o arquivo [TourMate Collection .json](./collections/TourMate.postman_collection.json) para o postman.
 ## Aviso:
 Altere as credenciais do Banco de Dados no arquivo [application.properties](./src/main/resources/application.properties)
 
 # Videos:
-
-[Video DevOps](https://www.youtube.com/watch?v=6ieReb4PFlk&ab_channel=DiogoGiarrantiKahn)
+<a href="https://www.youtube.com/watch?v=6ieReb4PFlk&ab_channel=DiogoGiarrantiKahn">
+  <img src="./images/devops.png" alt="DevOps" width="550" height="400">
+</a>

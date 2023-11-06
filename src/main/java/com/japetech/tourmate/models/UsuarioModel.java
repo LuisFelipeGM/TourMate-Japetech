@@ -1,17 +1,41 @@
 package com.japetech.tourmate.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.japetech.tourmate.enums.Sexo;
 import jakarta.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
 @Table(name = "T_TRMT_USUARIO")
-public class UsuarioModel {
+public class UsuarioModel implements UserDetails {
+
+    public UsuarioModel() {
+    }
+
+    public UsuarioModel(Long id, String nome, String email, String senha, String cpf, LocalDate dataNascimento, Sexo sexo,
+                        String plus, EnderecoModel endereco, PreferenciaModel preferencia, List<ViagemModel> viagem) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        setSenha(senha);
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+        this.sexo = sexo;
+        this.plus = plus;
+        this.endereco = endereco;
+        this.preferencia = preferencia;
+        this.viagem = viagem;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +47,7 @@ public class UsuarioModel {
     @Column(nullable = false, length = 100)
     private String email;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 255)
     private String senha;
 
     @Column(nullable = false, unique = true, length = 12)
@@ -85,7 +109,7 @@ public class UsuarioModel {
     }
 
     public void setSenha(String senha) {
-        this.senha = senha;
+        this.senha = new BCryptPasswordEncoder().encode(senha);
     }
 
     public String getCpf() {
@@ -142,5 +166,47 @@ public class UsuarioModel {
 
     public void setViagem(List<ViagemModel> viagem) {
         this.viagem = viagem;
+    }
+
+    @Override
+    @JsonIgnore
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+    }
+
+    @Override
+    @JsonIgnore
+    public String getPassword() {
+        return senha;
+    }
+
+    @Override
+    @JsonIgnore
+    public String getUsername() {
+        return email;
+    }
+
+    @Override
+    @JsonIgnore
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    @JsonIgnore
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    @JsonIgnore
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    @JsonIgnore
+    public boolean isEnabled() {
+        return true;
     }
 }

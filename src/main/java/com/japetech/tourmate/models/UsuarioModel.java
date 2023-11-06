@@ -48,6 +48,7 @@ public class UsuarioModel implements UserDetails {
     private String email;
 
     @Column(nullable = false, length = 255)
+    @JsonIgnore
     private String senha;
 
     @Column(nullable = false, unique = true, length = 12)

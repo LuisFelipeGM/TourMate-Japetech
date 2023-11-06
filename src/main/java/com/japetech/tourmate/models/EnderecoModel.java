@@ -2,7 +2,6 @@ package com.japetech.tourmate.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
 
 
 @Entity

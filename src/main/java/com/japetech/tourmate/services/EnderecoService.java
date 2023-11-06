@@ -5,7 +5,6 @@ import com.japetech.tourmate.models.EnderecoModel;
 import com.japetech.tourmate.models.UsuarioModel;
 import com.japetech.tourmate.repositories.EnderecoRepository;
 import com.japetech.tourmate.repositories.UsuarioRepository;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;

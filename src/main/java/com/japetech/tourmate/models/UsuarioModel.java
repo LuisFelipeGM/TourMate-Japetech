@@ -3,7 +3,6 @@ package com.japetech.tourmate.models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.japetech.tourmate.enums.Sexo;
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.Period;

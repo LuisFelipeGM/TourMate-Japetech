@@ -5,6 +5,8 @@ import com.japetech.tourmate.models.PreferenciaModel;
 import com.japetech.tourmate.models.UsuarioModel;
 import com.japetech.tourmate.repositories.PreferenciaRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,6 +17,8 @@ import java.util.Optional;
 @Service
 @Slf4j
 public class PreferenciaService extends EntityService<PreferenciaModel> {
+
+    private static final Logger log = LoggerFactory.getLogger(PreferenciaService.class);
 
     private final PreferenciaRepository preferenciaRepository;
 

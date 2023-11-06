@@ -4,6 +4,8 @@ import com.japetech.tourmate.dtos.ParceiroDto;
 import com.japetech.tourmate.models.ParceiroModel;
 import com.japetech.tourmate.repositories.ParceiroRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,8 +14,9 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-@Slf4j
 public class ParceiroService extends EntityService<ParceiroModel> {
+
+    private static final Logger log = LoggerFactory.getLogger(ParceiroService.class);
 
     private final ParceiroRepository parceiroRepository;
 

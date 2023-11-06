@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Data
+
 @Entity
 @Table(name = "T_TRMT_ENDERECO")
 public class EnderecoModel {
@@ -45,4 +45,91 @@ public class EnderecoModel {
     @JsonIgnore
     private UsuarioModel usuario;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getCep() {
+        return cep;
+    }
+
+    public void setCep(Long cep) {
+        this.cep = cep;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+    public String getComplementoNumero() {
+        return complementoNumero;
+    }
+
+    public void setComplementoNumero(String complementoNumero) {
+        this.complementoNumero = complementoNumero;
+    }
+
+    public String getPontoReferencia() {
+        return pontoReferencia;
+    }
+
+    public void setPontoReferencia(String pontoReferencia) {
+        this.pontoReferencia = pontoReferencia;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getSiglaEstado() {
+        return siglaEstado;
+    }
+
+    public void setSiglaEstado(String siglaEstado) {
+        this.siglaEstado = siglaEstado;
+    }
+
+    public UsuarioModel getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(UsuarioModel usuario) {
+        this.usuario = usuario;
+    }
 }

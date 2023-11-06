@@ -7,22 +7,29 @@ import lombok.Data;
 
 import java.time.LocalDate;
 
-@Data
-public class ViagemDto {
+public record ViagemDto (
 
-    @Schema(example = "São Paulo")
-    @NotBlank(message = "O nome do lugar desejado é obrigatório")
-    private String lugarDesejado;
+        @Schema(example = "São Paulo")
+        @NotBlank(message = "O nome do lugar desejado é obrigatório")
+        String lugarDesejado,
 
-    @Schema(example = "2023-12-20")
-    private LocalDate dataInicio;
+        @Schema(example = "2023-12-20")
+        LocalDate dataInicio,
 
-    @Schema(example = "2023-12-10")
-    private LocalDate dataFim;
+        @Schema(example = "2023-12-10")
+        LocalDate dataFim,
 
-    @Schema(example = "1")
-    @NotNull(message = "O Id do Usuario é obrigatório")
-    private Long idUsuario;
+        @Schema(example = "1")
+        @NotNull(message = "O Id do Usuario é obrigatório")
+        Long idUsuario
+
+) {
+
+
+
+
+
+
 
 
 

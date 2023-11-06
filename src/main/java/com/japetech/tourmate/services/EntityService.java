@@ -3,7 +3,6 @@ package com.japetech.tourmate.services;
 import com.japetech.tourmate.interfaces.IEntityService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.NotNull;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.jpa.repository.JpaRepository;

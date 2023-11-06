@@ -3,7 +3,6 @@ package com.japetech.tourmate.services;
 import com.japetech.tourmate.dtos.ParceiroDto;
 import com.japetech.tourmate.models.ParceiroModel;
 import com.japetech.tourmate.repositories.ParceiroRepository;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;

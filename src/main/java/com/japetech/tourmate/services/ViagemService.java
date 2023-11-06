@@ -7,7 +7,6 @@ import com.japetech.tourmate.models.UsuarioModel;
 import com.japetech.tourmate.models.ViagemModel;
 import com.japetech.tourmate.repositories.UsuarioRepository;
 import com.japetech.tourmate.repositories.ViagemRepository;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -23,7 +22,6 @@ import java.net.URL;
 import java.util.Optional;
 
 @Service
-@Slf4j
 public class ViagemService extends EntityService<ViagemModel> {
 
     private static final Logger log = LoggerFactory.getLogger(ViagemService.class);

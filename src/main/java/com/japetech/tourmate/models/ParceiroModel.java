@@ -1,7 +1,6 @@
 package com.japetech.tourmate.models;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 @Entity
 @Table(name = "T_TRMT_PARCEIRO")

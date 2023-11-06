@@ -5,40 +5,40 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class PreferenciaDto {
+public record PreferenciaDto (
 
-    @Schema(example = "N")
-    @NotBlank(message = "O clima frio é obrigatório")
-    private String climaFrio;
+        @Schema(example = "N")
+        @NotBlank(message = "O clima frio é obrigatório")
+        String climaFrio,
 
-    @Schema(example = "S")
-    @NotBlank(message = "O clima quente é obrigatório")
-    private String climaQuente;
+        @Schema(example = "S")
+        @NotBlank(message = "O clima quente é obrigatório")
+        String climaQuente,
 
-    @Schema(example = "S")
-    @NotBlank(message = "A viagem turismo é obrigatório")
-    private String viagemTurismo;
+        @Schema(example = "S")
+        @NotBlank(message = "A viagem turismo é obrigatório")
+        String viagemTurismo,
 
-    @Schema(example = "N")
-    @NotBlank(message = "A viagem negocio é obrigatório")
-    private String viagemNegocio;
+        @Schema(example = "N")
+        @NotBlank(message = "A viagem negocio é obrigatório")
+        String viagemNegocio,
 
-    @Schema(example = "N")
-    private String viagemLazer;
+        @Schema(example = "N")
+        String viagemLazer,
 
-    @Schema(example = "S")
-    private String viagemRomantico;
+        @Schema(example = "S")
+        String viagemRomantico,
 
-    @Schema(example = "N")
-    private String climaChuvoso;
+        @Schema(example = "N")
+        String climaChuvoso,
 
-    @Schema(example = "S")
-    private String climaEnsolarado;
+        @Schema(example = "S")
+        String climaEnsolarado,
 
-    @Schema(example = "S")
-    private String climaNublado;
+        @Schema(example = "S")
+        String climaNublado,
 
-    @Schema(example = "N")
-    private String climaNeve;
+        @Schema(example = "N")
+        String climaNeve
 
-}
+) { }

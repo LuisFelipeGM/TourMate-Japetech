@@ -4,6 +4,8 @@ import com.japetech.tourmate.interfaces.IEntityService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.io.Serializable;
@@ -13,8 +15,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-@Slf4j
 public abstract class EntityService<T> implements IEntityService<T> {
+
+    private static final Logger log = LoggerFactory.getLogger(EntityService.class);
 
     public Class<T> type;
 

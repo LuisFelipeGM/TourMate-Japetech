@@ -5,44 +5,43 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
-@Data
-public class EnderecoDto {
 
-    @Schema(example = "06681789")
-    @NotNull(message = "O CEP é obrigatório")
-    private Long cep;
+public record EnderecoDto (
 
-    @Schema(example = "Rua Fidêncio Ramos")
-    @NotBlank(message = "O Logradouro é obrigatório")
-    private String logradouro;
+        @Schema(example = "06681789")
+        @NotNull(message = "O CEP é obrigatório")
+        Long cep,
 
-    @Schema(example = "1222")
-    private Integer numero;
+        @Schema(example = "Rua Fidêncio Ramos")
+        @NotBlank(message = "O Logradouro é obrigatório")
+        String logradouro,
 
-    @Schema(example = "Prédio 2 - 548")
-    private String complementoNumero;
+        @Schema(example = "1222")
+        Integer numero,
 
-    @Schema(example = "Segunda entrada da rua principal")
-    private String pontoReferencia;
+        @Schema(example = "Prédio 2 - 548")
+        String complementoNumero,
 
-    @Schema(example = "Vila Olímpia")
-    @NotBlank(message = "O Bairro é obrigatório")
-    private String bairro;
+        @Schema(example = "Segunda entrada da rua principal")
+        String pontoReferencia,
 
-    @Schema(example = "São Paulo")
-    @NotBlank(message = "A Cidade é obrigatório")
-    private String cidade;
+        @Schema(example = "Vila Olímpia")
+        @NotBlank(message = "O Bairro é obrigatório")
+        String bairro,
 
-    @Schema(example = "São Paulo")
-    @NotBlank(message = "O Estado é obrigatório")
-    private String estado;
+        @Schema(example = "São Paulo")
+        @NotBlank(message = "A Cidade é obrigatório")
+        String cidade,
 
-    @Schema(example = "SP")
-    @NotBlank(message = "A Sigla do Estado é obrigatório")
-    private String siglaEstado;
+        @Schema(example = "São Paulo")
+        @NotBlank(message = "O Estado é obrigatório")
+        String estado,
 
-    @Schema(example = "1")
-    @NotNull(message = "O Id do Usuario é obrigatório")
-    private Long idUsuario;
+        @Schema(example = "SP")
+        @NotBlank(message = "A Sigla do Estado é obrigatório")
+        String siglaEstado,
 
-}
+        @Schema(example = "1")
+        @NotNull(message = "O Id do Usuario é obrigatório")
+        Long idUsuario
+) { }

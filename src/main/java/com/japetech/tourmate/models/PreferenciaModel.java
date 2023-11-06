@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Data
 @Entity
 @Table(name = "T_TRMT_PREFERENCIA")
 public class PreferenciaModel {
@@ -48,4 +47,99 @@ public class PreferenciaModel {
     @JsonIgnore
     private UsuarioModel usuario;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getClimaFrio() {
+        return climaFrio;
+    }
+
+    public void setClimaFrio(String climaFrio) {
+        this.climaFrio = climaFrio;
+    }
+
+    public String getClimaQuente() {
+        return climaQuente;
+    }
+
+    public void setClimaQuente(String climaQuente) {
+        this.climaQuente = climaQuente;
+    }
+
+    public String getViagemTurismo() {
+        return viagemTurismo;
+    }
+
+    public void setViagemTurismo(String viagemTurismo) {
+        this.viagemTurismo = viagemTurismo;
+    }
+
+    public String getViagemNegocio() {
+        return viagemNegocio;
+    }
+
+    public void setViagemNegocio(String viagemNegocio) {
+        this.viagemNegocio = viagemNegocio;
+    }
+
+    public String getViagemLazer() {
+        return viagemLazer;
+    }
+
+    public void setViagemLazer(String viagemLazer) {
+        this.viagemLazer = viagemLazer;
+    }
+
+    public String getViagemRomantico() {
+        return viagemRomantico;
+    }
+
+    public void setViagemRomantico(String viagemRomantico) {
+        this.viagemRomantico = viagemRomantico;
+    }
+
+    public String getClimaChuvoso() {
+        return climaChuvoso;
+    }
+
+    public void setClimaChuvoso(String climaChuvoso) {
+        this.climaChuvoso = climaChuvoso;
+    }
+
+    public String getClimaEnsolarado() {
+        return climaEnsolarado;
+    }
+
+    public void setClimaEnsolarado(String climaEnsolarado) {
+        this.climaEnsolarado = climaEnsolarado;
+    }
+
+    public String getClimaNublado() {
+        return climaNublado;
+    }
+
+    public void setClimaNublado(String climaNublado) {
+        this.climaNublado = climaNublado;
+    }
+
+    public String getClimaNeve() {
+        return climaNeve;
+    }
+
+    public void setClimaNeve(String climaNeve) {
+        this.climaNeve = climaNeve;
+    }
+
+    public UsuarioModel getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(UsuarioModel usuario) {
+        this.usuario = usuario;
+    }
 }

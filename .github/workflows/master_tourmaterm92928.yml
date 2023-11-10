@@ -9,6 +9,11 @@ on:
       - master
   workflow_dispatch:
 
+env:
+    SPRING_DATASOURCE_USERNAME: ${{ secrets.USERNAME }}
+    SPRING_DATASOURCE_PASSWORD: ${{ secrets.PASSWORD }}
+    API_CHATGPT_KEY: ${{ secrets.APIKEY }}
+
 jobs:
   build:
     runs-on: windows-latest

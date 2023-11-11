@@ -49,12 +49,17 @@ Altere as credenciais do Banco de Dados no arquivo [application.properties](./sr
 # Videos:
 
 ## DevOps:
-<a href="#">
+<a href="https://www.youtube.com/watch?v=BQJIQyYJVoc&feature=youtu.be">
   <img src="./images/devops.png" alt="Video DevOps" width="500" height="400">
 </a>
 
 ## DBE:
-<a href="#">
+<a href="https://youtu.be/kbvSY0UKtvQ">
   <img src="./images/dbe.png" alt="Video DBE" width="500" height="300">
+</a>
+
+## Enterprise:
+<a href="https://youtu.be/BdVuOiLfv8A">
+  <img src="./images/devops.png" alt="Video DBE" width="500" height="300">
 </a>
 

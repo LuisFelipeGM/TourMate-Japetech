@@ -67,7 +67,7 @@ Altere as credenciais do Banco de Dados no arquivo [application.properties](./sr
 
 ## Enterprise:
 <a href="https://youtu.be/BdVuOiLfv8A" target="_blank">
-  <img src="./images/devops.png" alt="Video DBE" width="500" height="300">
+  <img src="./images/devops.png" alt="Video DBE" width="500" height="400">
 </a>
 
 ## IA:

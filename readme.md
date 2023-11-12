@@ -17,7 +17,7 @@
 ## Integrantes:
 | Nome                        | RM      | Turma      |
 |-----------------------------|---------|------------|
-| Diogo Giarranti Kahn        | RM92928 | 2TDSPG     |
+| Diogo Giarranti Kahn        | 92928   | 2TDSPG     |
 | Heitor Borba Marini         | 92976   | 2TDSS      |
 | Luís Felipe Garcia Menezes  | 94051   | 2TDST      |
 | Mateus da Costa Leme        | 93480   | 2TDSPG     |

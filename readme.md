@@ -1,23 +1,25 @@
 # Tourmate
-* [Integrantes Japetech](#Integrantes)
-* [Nossa Solução](#Solução)
-* [Arquitetura](#Arquitetura)
-* [Benefícios](#Benefícios)
-* [Pricipais funcionalidades](#Funcionalidades)
+* [Integrantes](#integrantes)
+* [Solução](#solução)
+* [Arquitetura](#arquitetura)
+* [Beneficios](#benefícios)
+* [Pricipais funcionalidades](#funcionalidades)
 
-* [AVISO IMPORTANTE](#Aviso)
+* [AVISO IMPORTANTE](#aviso)
 
 * <details><summary><a href="#Videos">Videos</a></summary>
    
-  * [DevOps](#DevOps)
-  * [Digital Business Enablement](#DBE)
+  * [DevOps](#devops)
+  * [Digital Business Enablement](#dbe)
+  * [Enterprise Application Development](#enterprise)
+  * [Disruptve Arquitectures & AI](#ia)
   
 </details>
 
 ## Integrantes:
 | Nome                        | RM      | Turma      |
 |-----------------------------|---------|------------|
-| Diogo Giarranti Kahn        | 92928   | 2TDSPG     |
+| Diogo Giarranti Kahn        | RM92928 | 2TDSPG     |
 | Heitor Borba Marini         | 92976   | 2TDSS      |
 | Luís Felipe Garcia Menezes  | 94051   | 2TDST      |
 | Mateus da Costa Leme        | 93480   | 2TDSPG     |
@@ -49,7 +51,7 @@ Altere as credenciais do Banco de Dados no arquivo [application.properties](./sr
 # Videos:
 
 ## DevOps:
-<a href="https://www.youtube.com/watch?v=BQJIQyYJVoc&feature=youtu.be">
+<a href="https://www.youtube.com/watch?v=BQJIQyYJVoc">
   <img src="./images/devops.png" alt="Video DevOps" width="500" height="400">
 </a>
 
@@ -63,3 +65,7 @@ Altere as credenciais do Banco de Dados no arquivo [application.properties](./sr
   <img src="./images/devops.png" alt="Video DBE" width="500" height="300">
 </a>
 
+## IA:
+<a href="https://youtu.be/Pd5ueUls4ig">
+  <img src="./images/dbe.png" alt="Video DBE" width="500" height="300">
+</a>

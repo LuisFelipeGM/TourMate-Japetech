@@ -48,24 +48,29 @@ Empresas focadas em viagens, como hotéis, restaurantes e sites, também podem s
 ## Aviso:
 Altere as credenciais do Banco de Dados no arquivo [application.properties](./src/main/resources/application.properties)
 
+## Link do Projeto do Front-End Expo:
+<a href="https://snack.expo.dev/@pedrochueiri/japetech_api?platform=android" target="_blank">
+   <p>Link Front-End Expo</p>
+</a>
+
 # Videos:
 
 ## DevOps:
-<a href="https://www.youtube.com/watch?v=BQJIQyYJVoc">
+<a href="https://www.youtube.com/watch?v=BQJIQyYJVoc" target="_blank">
   <img src="./images/devops.png" alt="Video DevOps" width="500" height="400">
 </a>
 
 ## DBE:
-<a href="https://youtu.be/kbvSY0UKtvQ">
+<a href="https://youtu.be/kbvSY0UKtvQ" target="_blank">
   <img src="./images/dbe.png" alt="Video DBE" width="500" height="300">
 </a>
 
 ## Enterprise:
-<a href="https://youtu.be/BdVuOiLfv8A">
+<a href="https://youtu.be/BdVuOiLfv8A" target="_blank">
   <img src="./images/devops.png" alt="Video DBE" width="500" height="300">
 </a>
 
 ## IA:
-<a href="https://youtu.be/Pd5ueUls4ig">
+<a href="https://youtu.be/Pd5ueUls4ig" target="_blank">
   <img src="./images/dbe.png" alt="Video DBE" width="500" height="300">
 </a>
